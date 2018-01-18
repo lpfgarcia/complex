@@ -181,7 +181,7 @@ devtools::install_github("SmartDataAnalytics/ECoL")
 The base-level folder is in charge to extract the complexity measures from the [datasets](https://github.com/lpfgarcia/complex/tree/master/source/base/datasets). To extract the complexity measure and the classification performance over 10-fold cross-validation, execute the `run.r` script.
 
 ```r
-
+cd source/base
 R CMD BATCH run.r out.log
 
 ```
@@ -191,7 +191,7 @@ R CMD BATCH run.r out.log
 The meta-level is in charge to generate the meta-dataset and run the meta-regressors. The database folder contains the `.RData` files with the complexity measures and the classification performance for each dataset. To extract the MtL performance you need to execute the `run.r` script.
 
 ```r
-
+cd source/meta
 R CMD BATCH run.r out.log
 
 ```
