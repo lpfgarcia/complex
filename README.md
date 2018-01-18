@@ -5,7 +5,6 @@ This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 
 
 ## Datasets
 
-A summary of the datasets used in this experiment can be found here:
 <details>
   <summary>Click to expand</summary>
 Summary of datasets characteristics: identifier, name, number of examples, number of features (numeric/categorical), number of classes and the majority class proportion of each dataset.
