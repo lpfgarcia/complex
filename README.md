@@ -3,10 +3,6 @@ complex
 
 This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 2018 paper "An updated analysis of complexity measures for classification problems". The experiments are divided in two steps. The first is related to the base-level and the second to the meta-level performance. To run the experiment we need some R packages and the [ECoL](https://github.com/SmartDataAnalytics/ECoL) library.
 
-## Datasets
-
-A summary of the datasets used in this experiment can be found [here](https://github.com/lpfgarcia/complex/blob/master/Datasets.md).
-
 ## Technical Requirements
 
 R version 3.4.3 -- "Kite-Eating Tree"
@@ -25,6 +21,11 @@ if(!require("devtools")) {
 devtools::install_github("SmartDataAnalytics/ECoL")
 
 ```
+
+## Datasets
+
+A summary of the datasets used in this experiment can be found [here](https://github.com/lpfgarcia/complex/blob/master/Datasets.md).
+
 
 ## Base-level
 
