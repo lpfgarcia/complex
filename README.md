@@ -1,7 +1,7 @@
 complex
 =======
 
-This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 2018 paper "An updated analysis of complexity measures for classification problems". The experiments are divided in two steps. The first is related to the base-level and the second to the meta-level performance. To run the experiment we need some R packages and the [ECoL](https://github.com/SmartDataAnalytics/ECoL) library.
+This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 2018 paper "An updated analysis of complexity measures for classification problems". The experiments are divided in two steps. The first is related to the base-level and the second to the meta-level performance. To run the experiment we need the [ECoL](https://github.com/SmartDataAnalytics/ECoL) and some other R packages.
 
 ## Datasets
 
@@ -159,13 +159,15 @@ Summary of datasets characteristics: identifier, name, number of examples, numbe
 
 R version 3.4.3 -- "Kite-Eating Tree"
 
-Packages: `caret`, `ECoL`, `e1071`, `foreign`, `kknn`, `randomForest`, `RWeka`, `ggplot2`
+Packages: `ECoL`, `caret`, `e1071`, `foreign`, `kknn`, `randomForest`, `RWeka`, `ggplot2`
 
 ```r
 
+# install the main packages
 install.packages(c("caret", "e1071", "foreign", "kknn", 
   "randomForest", "RWeka", "ggplot2"))
 
+# install the ECoL package
 if(!require("devtools")) {
   install.packages("devtools")
 }
