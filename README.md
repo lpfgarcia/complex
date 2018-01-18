@@ -7,7 +7,7 @@ This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 
 
 R version 3.4.3 -- "Kite-Eating Tree"
 
-Packages: caret, ECoL, e1071, foreign, kknn, randomForest, RWeka, ggplot2
+Packages: `caret`, `ECoL`, `e1071`, `foreign`, `kknn`, `randomForest`, `RWeka`, `ggplot2`
 
 ```r
 
