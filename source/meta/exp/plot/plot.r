@@ -20,7 +20,7 @@ distribution <- function(data) {
   data = apply(data[CLASSIFIERS], 1, which.max)
   data = melt(table(CLASSIFIERS[data]))
 
-  pdf("wins1.pdf", width=5, height=5)
+  pdf("wins1.pdf", width=4, height=4)
     plot = ggplot(data, aes(x=Var1, y=value)) + 
       geom_bar(colour="black", fill="white", stat="identity", 
         position="dodge", width=0.6) + 
@@ -36,7 +36,7 @@ histogram <- function(data) {
   table = data[CLASSIFIERS]
   table = melt(table)
 
-  pdf("wins2.pdf", width=5, height=5)
+  pdf("wins2.pdf", width=4, height=4)
     plot = ggplot(table, aes(x=variable, y=value)) + 
       geom_boxplot() + 
       default() + ylab("Accuracy") + 
@@ -53,9 +53,9 @@ boxplot <- function(data) {
   table = melt(data)
   table$group = c(rep("a", 1692), rep("b", 1128))
 
-  pdf("boxplot.pdf", width=16, height=5)
+  pdf("boxplot.pdf", width=8, height=9)
     plot = ggplot(table, aes(x=variable, y=value, fill=group)) + 
-      geom_boxplot() + facet_wrap( ~ Classifier, ncol=4) + 
+      geom_boxplot() + facet_wrap( ~ Classifier, ncol=2) + 
       default() +scale_fill_manual(values=c("white", "grey")) + 
       xlab("") + ylab("MSE") + guides(fill=FALSE) + 
       ylim(0, 0.1)
@@ -79,7 +79,7 @@ performance <- function(data, aux) {
 
   table = melt(foo)
 
-  pdf("performance.pdf", width=7, height=5)
+  pdf("performance.pdf", width=6, height=5)
     plot = ggplot(table, aes(x=Var2, y=value)) + 
       geom_bar(colour="black", fill="white", stat="identity", 
         position="dodge", width=0.6) + facet_wrap( ~ Var1, ncol=4) + 
@@ -101,7 +101,7 @@ features <- function(data) {
   table = melt(aux)
   table$Var1 = factor(rownames(table), levels=rownames(table))
 
-  pdf("features.pdf", width=7, height=5)
+  pdf("features.pdf", width=5, height=5)
     plot = ggplot(table, aes(x=Var1, y=value)) + 
       geom_bar(colour="black", fill="white", stat="identity", 
         position="dodge", width=0.6) + default() + 
