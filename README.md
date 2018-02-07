@@ -159,20 +159,14 @@ Summary of datasets characteristics: identifier, name, number of examples, numbe
 
 R version 3.4.3 -- "Kite-Eating Tree"
 
-Packages: `ECoL`, `caret`, `e1071`, `foreign`, `kknn`, `randomForest`, `RWeka`, `ggplot2`
+Packages: `caret`, `ECoL`, `e1071`, `foreign`, `kknn`, `randomForest`, `RWeka`, `ggplot2`
 
 ```r
 
-# install the main packages
-install.packages(c("caret", "e1071", "foreign", "kknn", 
+# install the packages
+install.packages(c("caret", "ECoL", "e1071", "foreign", "kknn", 
   "randomForest", "RWeka", "ggplot2"))
 
-# install the ECoL package
-if(!require("devtools")) {
-  install.packages("devtools")
-}
-
-devtools::install_github("SmartDataAnalytics/ECoL")
 
 ```
 
