@@ -1,7 +1,7 @@
 complex
 =======
 
-This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 2018 paper "An updated analysis of complexity measures for classification problems". The experiments are divided in two steps. The first is related to the base-level and the second to the meta-level performance. To run the experiment we need the [ECoL](https://github.com/SmartDataAnalytics/ECoL) and some other R packages.
+This project is the code used in the Meta-Learning (MtL) evaluation of the ICPR 2018 paper "Classifier Recommendation Using Data Complexity Measures". The experiments are divided in two steps. The first is related to the base-level and the second to the meta-level performance. To run the experiment we need the [ECoL](https://CRAN.R-project.org/package=ECoL) and some other R packages.
 
 ## Datasets
 
