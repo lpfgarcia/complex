@@ -11,7 +11,7 @@ setup <- function() {
 
 run <- function(...) {
   lapply(files, function(file) {
-    cat(basename(file), "\n/"); root(file)
+    cat(basename(file), "\n/"); root("measures", file)
     cat("/\n")
   })
 }
