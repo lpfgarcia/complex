@@ -9,7 +9,7 @@ setup <- function() {
     source(i)
 }
 
-run <- function(...) { 
+run <- function(...) {
   lapply(sample(files, 10), function(file) {
     cat(basename(file), "\n/"); root(file)
     cat("/\n")
