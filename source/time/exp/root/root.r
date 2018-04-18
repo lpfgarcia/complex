@@ -8,19 +8,17 @@ save <- function(aux, file) {
   dump("aux", name)
 }
 
-measures <- function(tran, test) {
-  c(system.time(complexity(class ~., tran))[3], 
-    system.time(classifiers(tran, test))[3])
-}
-
 root <- function(file) {
 
-  data = cfold(read.arff(file))
+  data = read.arff(file)
+  aux = system.time(complexity(class ~., data))[3]
+  data = cfold(data)
 
-  aux = sapply(1:FOLDS, function(i){
-    measures(data$tran[[i]], data$test[[i]])
+  tmp = sapply(1:FOLDS, function(i){
+    system.time(classifiers(data$tran[[i]], data$test[[i]]))[3]
   })
 
+  aux = c(aux, sum(tmp))
   save(aux, file)
   return(0)
 }
