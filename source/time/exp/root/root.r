@@ -17,11 +17,9 @@ root <- function(file) {
 
   data = cfold(read.arff(file))
 
-  aux = do.call("rbind",
-    lapply(1:FOLDS, function(i){
-        measures(data$tran[[i]], data$test[[i]])
-    })
-  )
+  aux = sapply(1:FOLDS, function(i){
+    measures(data$tran[[i]], data$test[[i]])
+  })
 
   save(aux, file)
   return(0)
