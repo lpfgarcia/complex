@@ -8,20 +8,16 @@ save <- function(aux, file) {
   dump("aux", name)
 }
 
-measures <- function(tran, test) {
-  c(complexity(class ~., tran), classifiers(tran, test))
+oracle <- function(train, test) {
+  rowMeans(sapply(1:FOLDS, function(i){
+    classifiers(tran[[i]], test[[i]])
+  }))
 }
 
 root <- function(file) {
-
   data = cfold(read.arff(file))
-
-  aux = do.call("rbind",
-    lapply(1:FOLDS, function(i){
-        measures(data$tran[[i]], data$test[[i]])
-    })
-  )
-
+  tmp = complexity(class ~., data$data)
+  aux = c(tmp, oracle(fold$train, fold$test))
   save(aux, file)
   return(0)
 }
