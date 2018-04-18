@@ -16,8 +16,8 @@ cfold <- function(data) {
   })
 
   tmp = list()
+  tmp$data = data
   tmp$tran = tran
   tmp$test = test
-  tmp$data = data
   return(tmp)
 }
