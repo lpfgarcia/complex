@@ -14,10 +14,19 @@ oracle <- function(tran, test) {
   }))
 }
 
-root <- function(file) {
-  data = cfold(read.arff(file))
+time <- function(data) {
+  tmp = system.time(complexity(class ~., data$data))[3]
+  c(tmp, system.time(oracle(data$tran, data$test))[3])
+}
+
+measures <- function(data) {
   tmp = complexity(class ~., data$data)
-  aux = c(tmp, oracle(data$tran, data$test))
+  c(tmp, oracle(data$tran, data$test))
+}
+
+root <- function(fun, file) {
+  data = cfold(read.arff(file))
+  aux = do.call(fun, list(data))
   save(aux, file)
   return(0)
 }
