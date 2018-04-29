@@ -10,7 +10,7 @@ processing <- function(data) {
 make <- function() {
   do.call("rbind",
     lapply(files, function(file) {
-      processing(colMeans(dget(file)))
+      processing(dget(file))
     })
   )
 }
