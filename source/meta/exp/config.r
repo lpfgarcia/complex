@@ -22,8 +22,9 @@ DIR = getwd()
 files = list.files(paste(DIR, "/database", sep=""), full.names=TRUE)
 
 # complexity measures
-MEASURES = c(ls.overlapping(), ls.neighborhood(), ls.linearity(), 
-  ls.dimensionality(), ls.balance(), ls.network())
+MEASURES = c("F1", "F1v", "F2", "F3", "F4", "N1","N2", "N3", "N4", "T1", 
+  "LSCAvg", "L1", "L2", "L3", "T2", "T3", "T4", "C1", "C2", "Density", 
+  "ClsCoef", "Hubs")
 
 # regressors
-REGRESSORS = c("DWNN", "RF", "SVM", "Random", "Default")
+REGRESSORS = c("DWNN", "RF", "SVR", "Random", "Default")
