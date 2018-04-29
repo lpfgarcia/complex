@@ -13,7 +13,7 @@ RF <- function(tech, tran, test) {
   as.numeric(predict(model, test))
 }
 
-SVM <- function(tech, tran, test) {
+SVR <- function(tech, tran, test) {
   model = svm(tech, tran, scale=TRUE, type="eps-regression", kernel="radial")
   as.numeric(predict(model, test))
 }
