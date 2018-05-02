@@ -7,7 +7,7 @@ default <- function() {
 
   par = element_text(size=14, colour="black")
 
-  plot = theme_classic() + 
+  plot = theme_bw() + 
     theme(legend.position="top", 
       text=par, axis.text=par, strip.text=par, legend.text=par
     )
@@ -76,15 +76,16 @@ performance <- function(data, aux) {
   foo = rbind(foo[1:3] - foo[4], foo[1:3] - foo[5])
   colnames(foo) = REGRESSORS[1:3]
   rownames(foo) = c("Random", "Default")
+  foo = foo*100
 
   table = melt(foo)
 
-  pdf("performance.pdf", width=6, height=5)
+  pdf("performance.pdf", width=6, height=4)
     plot = ggplot(table, aes(x=Var2, y=value)) + 
       geom_bar(colour="black", fill="white", stat="identity", 
         position="dodge", width=0.6) + facet_wrap( ~ Var1, ncol=4) + 
       geom_hline(yintercept=0) + default() + 
-      ylab("Increase of Accuracy") + xlab("")
+      ylab("Percentage increase of accuracy") + xlab("")
     print(plot)
   dev.off()
 
